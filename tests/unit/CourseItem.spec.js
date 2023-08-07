@@ -87,11 +87,18 @@ describe("CourseItem.vue", () => {
   });
 
   it("emits removeCourse event when 'Remove Course' button is clicked", async () => {
-  const wrapper = shallowMount(CourseItem);
-  await wrapper.setData({ isAdded: true }); 
-  await wrapper.find("[data-testid='sendRemove']").trigger("click");
-  expect(wrapper.emitted("removeCourse")).toBeTruthy();
-  expect(wrapper.emitted("removeCourse")[0]).toEqual([wrapper.vm.course.id]);
-});
+    const wrapper = shallowMount(CourseItem, {
+      props: {
+        course: {
+          id: 1, 
+        },
+      },
+    });
+  
+    wrapper.setData({ isAdded: true });    
+    await wrapper.find("[data-testid='sendRemove']").trigger("click");
+    expect(wrapper.emitted("removeCourse")).toBeTruthy();
+    expect(wrapper.emitted("removeCourse")[0]).toEqual([1]); 
+  });
 
 });
