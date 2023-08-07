@@ -16,7 +16,7 @@
     <button data-testid="sendAdd" v-if="!isFull && !isAdded" @click="sendAdd">
       Add Course
     </button>
-    <button v-else-if="!isFull" @click="sendRemove">Remove Course</button>
+    <button data-testid="sendRemove" v-else-if="!isFull" @click="sendRemove">Remove Course</button>
   </div>
 </template>
 
