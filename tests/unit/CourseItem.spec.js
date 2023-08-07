@@ -61,7 +61,7 @@ describe("CourseItem.vue", () => {
     const wrapper = shallowMount(CourseItem, {
       props: { course },
     });
-    expect(wrapper.vm.enrollmentStatus).toBe("available to join");
+    expect(wrapper.vm.enrollmentStatus).toBe("available to joinn");
   });
 
   it("when the button Add is selected the class is added", async () => {
