@@ -22,7 +22,6 @@ describe("CourseItem.vue", () => {
     expect(wrapper.find("p").text()).toBe(course.description);
   });
 
-  
   it("uses default props when none are provided", async () => {
     const wrapper = shallowMount(CourseItem);
     const defaultProps = {
@@ -30,13 +29,13 @@ describe("CourseItem.vue", () => {
       name: "Course Name",
       credits: 0,
       hours: 0,
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis accusantium modi adipisci rem architecto sequi atque mollitia voluptates magnam assumenda at reiciendis aliquid, iusto ab debitis quibusdam molestiae quas commodi?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis accusantium modi adipisci rem architecto sequi atque mollitia voluptates magnam assumenda at reiciendis aliquid, iusto ab debitis quibusdam molestiae quas commodi?",
       location: "online",
       enrollment: 0,
     };
     expect(wrapper.vm.course).toEqual(defaultProps);
   });
-  
 
   it("it apply Full when enrollment is Full", async () => {
     const course = {
@@ -101,5 +100,4 @@ describe("CourseItem.vue", () => {
     expect(wrapper.emitted("addCourse")).toBeTruthy();
     expect(wrapper.emitted("addCourse")[0]).toEqual([wrapper.vm.course.id]);
   });
-
 });
